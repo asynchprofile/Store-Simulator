@@ -110,7 +110,7 @@ public class StoreManager_Controller {
                         break;
                     case 4:
                         System.out.println ("You have chosen to see all cashiers working in the store");
-                       // managerOptions.showAllGoodsAvailable ();
+                        managerOptions.showAllCashiersWorking ();
                         System.out.println ("Would you like to continue? [yes/no]");
                         quitMenu = input.next ();
                         break;

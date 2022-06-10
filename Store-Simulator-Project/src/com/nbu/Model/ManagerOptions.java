@@ -47,5 +47,16 @@ public class ManagerOptions {
 
     }
 
+    public void showAllCashiersWorking() {
+        //Show all goods in the store
+        System.out.println ("Cashiers working in the store:" + Store.cashierArrayList.size());
+        //Print the information for every store object saved in the Arraylist of objects
+        for (Cashier cashier : Store.cashierArrayList) {
+            cashier.getEmployeeDetails();
+        }
+
+
+    }
+
 
 }

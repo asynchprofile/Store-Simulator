@@ -1,10 +1,7 @@
 package com.nbu;
 
 import com.nbu.Controller.StoreManager_Controller;
-import com.nbu.Model.Category;
-import com.nbu.Model.ManagerOptions;
-import com.nbu.Model.Product;
-import com.nbu.Model.Store;
+import com.nbu.Model.*;
 
 public class Main {
 
@@ -19,10 +16,11 @@ public class Main {
         Product bread = new Product ("ID-100", "Dobrudjanski Bread", Category.FOOD, "30/08/2022", 1.20, 65);
         Product milk = new Product ("ID-101", "Vereya Milk", Category.FOOD, "31/08/2022", 1.50, 80);
 
+        Cashier cashier1 = new Cashier ("Martin", "0001", 1500.50, 3);
+        Cashier cashier2 = new Cashier ("Victoria", "0002", 1650.50, 2);
 
-       // Start process
+        // Start process
         new StoreManager_Controller ();
-
 
     }
 }

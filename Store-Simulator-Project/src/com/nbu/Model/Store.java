@@ -6,8 +6,10 @@ public class Store {
     // Every store has a name and location
     private String storeName;
     private String storeLocation;
+    private Double storeProfit;
 
     public static ArrayList<Product> productArrayList = new ArrayList<> ();
+    public static ArrayList<Cashier> cashierArrayList = new ArrayList<> ();
 
 
     public Store() {
