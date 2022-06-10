@@ -92,6 +92,7 @@ public class StoreManager_Controller {
             try {
                 switch (userChoice) {
                     case 1:
+                        System.out.println ("You have chosen to see all stores available");
                         managerOptions.printAvailableStoresInfo ();
                         System.out.println ("Would you like to continue? [yes/no]");
                         quitMenu = input.next ();
@@ -102,10 +103,18 @@ public class StoreManager_Controller {
                         quitMenu = input.next ();
                         break;
                     case 3:
-                        System.out.println ("Case 3");
+                        System.out.println ("You have chosen to see all goods available");
+                        managerOptions.showAllGoodsAvailable ();
                         System.out.println ("Would you like to continue? [yes/no]");
                         quitMenu = input.next ();
                         break;
+                    case 4:
+                        System.out.println ("You have chosen to see all cashiers working in the store");
+                       // managerOptions.showAllGoodsAvailable ();
+                        System.out.println ("Would you like to continue? [yes/no]");
+                        quitMenu = input.next ();
+                        break;
+
                     case 0:
                         exit (0);
                 }

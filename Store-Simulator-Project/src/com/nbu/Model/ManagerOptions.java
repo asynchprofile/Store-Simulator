@@ -1,8 +1,5 @@
 package com.nbu.Model;
 
-import com.nbu.Model.GlobalDataStructures;
-import com.nbu.Model.Store;
-
 import java.util.Scanner;
 
 /*
@@ -12,8 +9,6 @@ Manager menu options:
         (3)  Show all goods available in the store");
         (4)  Show all cashiers working in the store");
         (5)  Show the total amount of all receipts");
-        (6) - Add new cashier: ID, Name, workplace number[1-5]");
-        (7) - Add a new item/good: ID, Name, Price, expiry date");
  */
 
 
@@ -39,5 +34,18 @@ public class ManagerOptions {
      storeLocation = scanner.next ();
      GlobalDataStructures.storeArrayList.add (new Store (storeName,storeLocation));
     }
+
+
+    public void showAllGoodsAvailable() {
+    //Show all goods in the store
+        System.out.println ("Goods in the list:" + Store.productArrayList.size());
+        //Print the information for every store object saved in the Arraylist of objects
+        for (Product product : Store.productArrayList) {
+            product.getProductDetails();
+        }
+
+
+    }
+
 
 }

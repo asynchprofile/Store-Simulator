@@ -7,7 +7,7 @@ public class Store {
     private String storeName;
     private String storeLocation;
 
-    public static ArrayList<Products> productsArrayList = new ArrayList<> ();
+    public static ArrayList<Product> productArrayList = new ArrayList<> ();
 
 
     public Store() {
