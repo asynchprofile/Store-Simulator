@@ -25,8 +25,8 @@ public class ConsoleMessages {
         System.out.println ("(3)  Show all goods available in the store");
         System.out.println ("(4)  Show all cashiers working in the store");
         System.out.println ("(5)  -Show the total amount of all receipts");
-        System.out.println ("(6)  -Add new cashier: ID, Name, workplace number[1-5]");
-        System.out.println ("(7)  -Add a new item/good: ID, Name, Price, expiry date, Price by delivery, quantity");
+        System.out.println ("(6)  Add new cashier: ID, Name, workplace number[1-5]");
+        System.out.println ("(7)  Add a new item/good: ID, Name, Price, expiry date, Price by delivery, quantity");
         System.out.println ("(0)  Exit");
         System.out.println ("-------------------------------------\n");
     }
@@ -34,8 +34,9 @@ public class ConsoleMessages {
     //Menu for Clients only
     public void showCustomerMenu() {
         System.out.println ("------ Client Actions --------");
-        System.out.println ("(1)  Enter Budget ");
-        System.out.println ("(2)  Make a purchase");
+        System.out.println ("(1)  See available items ");
+        System.out.println ("(2)  Enter Budget ");
+        System.out.println ("(3)  Make a purchase");
         System.out.println ("(3)  Check Budget");
         System.out.println ("(0)  Exit");
         System.out.println ("----------------------\n");

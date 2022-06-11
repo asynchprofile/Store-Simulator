@@ -1,5 +1,6 @@
 package com.nbu.Model;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class Product {
         setProductCategory (productCat);
         setExpiryDate (dateInStr);
         setPriceByDelivery(priceByDelivery);
-        setPrice (getExpiryDate ());
+        setPrice ();
         setQuantity (quantity);
         Store.productArrayList.add (this);
     }
@@ -49,6 +50,11 @@ public class Product {
         return ExpiryDate;
     }
 
+    public String getExpiryDateStr() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MMM/yyyy");
+        String strDate = dateFormat.format(this.ExpiryDate);
+        return strDate;
+    }
     public Double getPriceByDelivery() {
         return PriceByDelivery;
     }
@@ -76,20 +82,17 @@ public class Product {
     }
 
     public void setExpiryDate(String newExpDate) {
-        SimpleDateFormat formatter = new SimpleDateFormat ("dd-MMM-yyyy");
         try {
-            Date date = formatter.parse (newExpDate);
-            this.ExpiryDate = date;
-            //  System.out.println(date);
-            //  System.out.println(formatter.format(date));
+            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(newExpDate);
+            this.ExpiryDate = date1;
         } catch (ParseException e) {
-            System.out.println ("Wrong Date format, please try again!");
+            System.out.println ("Wrong Date format, please try again-!");
         }
     }
 
 
     public void setQuantity(int quantity) {
-        if (quantity > 0 && quantity < 100) {
+        if (quantity > 0 && quantity <= 200) {
             this.Quantity = quantity;
         } else this.Quantity = 0;
     }
@@ -101,33 +104,31 @@ public class Product {
     }
 
     //TODO Check price calculations
-    public void setPrice (Date expiryDate) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/uuuu/");
+    public void setPrice () {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy/");
         LocalDate localDate = LocalDate.now();
         int discount = 0;
 
         //70% of the price if the expiration date is today
-        if(dtf.equals (expiryDate)) {
+        if(localDate.equals (this.ExpiryDate)) {
             discount = 70;
             this.Price = (this.PriceByDelivery * discount) / 100;
         }
+        //If the expiration date has not passed, price = Delivery Price * 2
         else this.Price = PriceByDelivery*2;
 
-        //30% lower price if the expiration date is more than a week
-
-        //50% lower price if the expiration date is 2 days
+        //TODO Calculate 50% lower price if the expiration date is in 2 days
 
     }
 
     public void getProductDetails() {
-    System.out.println("-----------");
-    System.out.println("Product ID:" + this.ID);
-    System.out.println("Product name:" + this.ProductName);
-    System.out.println("Product category:" + this.ProductCategory);
-    System.out.println("Expiry Date:" + this.getExpiryDate ());
-    System.out.println("Price by Delivery:" + this.PriceByDelivery);
-    System.out.println("Price:" + this.Price);
-    System.out.println("Quantity:" + this.Quantity);
+    System.out.println("Product ID:" + getID ());
+    System.out.println("Product name:" + getName ());
+    System.out.println("Product category:" + getProductCategory ());
+    System.out.println("Expiry Date:" + getExpiryDateStr ());
+    System.out.println("Price by Delivery:" + getPriceByDelivery ());
+    System.out.println("Price:" + getPrice ());
+    System.out.println("Quantity:" + getQuantity ());
     System.out.println("-----------");
     }
 

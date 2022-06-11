@@ -8,6 +8,10 @@ public class Store {
     private String storeLocation;
     private Double storeProfit;
 
+    //Store expences and profit
+    private Double totalStoreExpenses;
+    private Double totalStoreProfit;
+
     public static ArrayList<Product> productArrayList = new ArrayList<> ();
     public static ArrayList<Cashier> cashierArrayList = new ArrayList<> ();
 
